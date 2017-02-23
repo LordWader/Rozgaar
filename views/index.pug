@@ -12,8 +12,11 @@ html
 
     div.row
       div.col-md-6.col-md-offset-3
-        div.jumbotron
-          h2.text-center
-              form(method='POST', action="/show")
-                input.form-control.text-field(name="name", type="text", placeholder="Enter your name")
-                input.form-control.button.submit-button(type="submit", value="GO!")
+        div
+            form(method='POST', action="/show")
+              input.form-control.text-field(name="name", type="text", placeholder="Enter your name")
+              input.form-control.button.submit-button(type="submit", value="GO!").
+              
+
+
+script(href='static/js/script.js')

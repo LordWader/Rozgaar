@@ -18,7 +18,7 @@ app.post('/show', function(req,res){
 
 })
 
-mongoose.connect('mongodb://localhost/rozgaar',function(err){
+mongoose.connect('mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db',function(err){
   if (err) console.log(err);
   else console.log('Connected to DB!');
 });

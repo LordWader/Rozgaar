@@ -1,5 +1,5 @@
 body{
-  background-color: #27ae60 !important;
+  background-color: #23aa6c !important;
   padding-top: 2%;
   padding-left: 15%;
   padding-right: 15%;
@@ -7,12 +7,22 @@ body{
   font-family: 'Sansita', sans-serif;
 }
 
+h1{
+	font-size: 70px;
+}
+
+.login-box{
+	margin-top: 100px;
+}
+
 form {
-    width: 413px;
+    width: 259px;
     margin: auto auto;
+    margin-bottom: 30px;
 }
 
 .text-field{
+   width: 259px;
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -20,19 +30,25 @@ form {
   display: inline-block;
   color: #355723;
   font-size: 16px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 0px;
+  border-radius: 10px;
   transition: all 0.3s;
 }
 .text-field:focus{
+   width: 280px;
   -webkit-box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.48);
   -moz-box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.48);
   box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.48);
 }
 
+.submit-text-field{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0px;
+}
+
 .button {
+    width: 259px;
     background-color: #243e16; /* Green */
     border: none;
     color: white;
@@ -41,10 +57,8 @@ form {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    font-weight: bold;
+    border-radius: 10px;
     transition: all 0.3s;
 
 }

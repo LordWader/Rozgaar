@@ -7,9 +7,8 @@ var WorkerSchema = new Schema({
   adhar_no: Array,
   mobile: Array,
   name: Array,
-
 })
 
 var Worker = mongoose.model('Worker', WorkerSchema);
 
-module.exports = mongoose.model('Worker', WorkerSchema);
+module.exports = Worker;

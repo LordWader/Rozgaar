@@ -12,10 +12,10 @@ app.get('/', function(req,res){
   res.render('index', { title: "ROZGAAR" });
 })
 
-app.post('/show', function(req,res){
-  var username = req.body.name;
-  console.log(username);
-
+app.post('/login', function(req,res){
+  var username = req.body.user;
+  var password = req.body.pass;
+  console.log(req.body);
 })
 
 mongoose.connect('mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db',function(err){

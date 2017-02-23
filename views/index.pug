@@ -1,23 +1,16 @@
-html
-  head
-    title Rozgaar
-    //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    link(rel='stylesheet', href='static/css/stylesheet.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans|Sansita')
-  body
-    h1= title
+extends layout.pug
 
-
-
-    div.row
-      div.col-md-6.col-md-offset-3
-        div
-            form(method='POST', action="/show")
-              input.form-control.text-field(name="name", type="text", placeholder="Enter your name")
-              input.form-control.button.submit-button(type="submit", value="GO!", id="go").
-
-
-
-script(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-script(href='https://code.jquery.com/jquery-3.1.1.min.js')
-script(href='static/js/script.js')
+block content
+  div.row
+    div.col-md-6.col-md-offset-3.login-box
+      div
+          form(method='POST', action="/login")
+            input.form-control.text-field(name="user", type="text", placeholder="Enter your username")
+            br
+            br
+            br
+            input.form-control.text-field(name="pass", type="password", placeholder="Enter your password")
+            br
+            br
+            br
+            input.form-control.button(type="submit", value="LOGIN", id="go")

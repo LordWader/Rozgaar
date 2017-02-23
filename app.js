@@ -14,7 +14,7 @@ app.get('/', function(req,res){
 
 app.post('/show', function(req,res){
   var username = req.body.name;
-  console.log('Bomb has been planted!');
+  console.log(username);
 
 })
 

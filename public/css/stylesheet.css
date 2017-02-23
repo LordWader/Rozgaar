@@ -7,17 +7,28 @@ body{
   font-family: 'Sansita', sans-serif;
 }
 
+form {
+    width: 413px;
+    margin: auto auto;
+}
+
 .text-field{
   border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  color: #355723;
   font-size: 16px;
   border-top-left-radius: 10px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 0px;
+}
+.text-field:focus{
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.48);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.48);
+  box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.48);
 }
 
 .button {
@@ -34,9 +45,16 @@ body{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: all 0.3s;
+    transition: active 0s;
+
 }
 .button:hover{
   background-color: #355723;
+}
+.button:active{
+  -webkit-box-shadow: inset 0px 0px 43px -12px rgba(26,38,25,1);
+  -moz-box-shadow: inset 0px 0px 43px -12px rgba(26,38,25,1);
+  box-shadow: inset 0px 0px 43px -12px rgba(26,38,25,1);
 }
 
 .submit-button{

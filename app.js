@@ -14,8 +14,6 @@ mongoose.connect('mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db',fu
 app.set('view engine','pug');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({ secret: '123456789', resave: false, saveUninitialized: true}));
-app.use(passport.initialize());
-app.use(passport.session());
 app.use('/static',express.static('public'));
 
 app.get('/', function(req,res){
@@ -31,9 +29,6 @@ app.post('/login', function(req,res){
 app.get('/login', function(req,res){
   res.render('login', { title: "ROZGAAR" });
 })
-
-app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
-
 
 app.listen(3000,function(err){
   if (err) console.log(err);

@@ -19,22 +19,30 @@ app.use(session({ secret: '123456789', resave: false, saveUninitialized: true}))
 app.use('/static',express.static('public'));
 
 app.get('/', function(req,res){
-  res.render('index', { title: "ROZGAAR" });
+  res.render('index', { title: "OZGAAR" });
 })
 
 app.get('/login', function(req,res){
-  res.render('login', { title: "ROZGAAR" });
-})
-
-app.get('/newUser', function(req,res){
-  res.render('newUser', { title: "ROZGAAR" });
+  res.render('login', { title: "OZGAAR" });
 })
 
 app.post('/login', function(req,res){
-  var username = req.body.user;
-  var password = req.body.pass;
+  var inputUsername = req.body.user;
+  var inputPassword = req.body.pass;
   console.log(req.body);
+  //  FIND the document where user == inputUsername;
+  //  IF (password of that document == inputPassword)
+          res.render('index', { title: "OZGAAR" });
+  //  ELSE render error page;
 
+})
+
+app.post('/newUser', function(req,res){
+  res.render('newUser', { title: "OZGAAR" });
+})
+
+app.post('/searchUser', function(req,res){
+  res.render('searchUser', { title: "OZGAAR" });
 })
 
 app.listen(3000,function(err){

@@ -7,6 +7,15 @@ body{
   font-family: 'Sansita', sans-serif;
 }
 
+.floating{
+  float: left;
+}
+
+.logo{
+  height: 60px;
+  width: auto;
+}
+
 h1{
 	font-size: 60px;
   transition: all 0.3s;

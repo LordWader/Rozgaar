@@ -1,16 +1,13 @@
 extends layout.pug
 
 block content
-  div.row
+    h2 Welcome to Gram Panchayat Portal
+
     div.col-md-6.col-md-offset-3.login-box
       div
-          form(method='POST', action="/login")
-            input.form-control.text-field(name="user", type="text", placeholder="Enter your username")
+          form(method='POST', action="/newUser")
+            input.form-control.button(type="submit", value="REGISTER NEW USER", id="go", href='/newUser')
             br
             br
             br
-            input.form-control.text-field(name="pass", type="password", placeholder="Enter your password")
-            br
-            br
-            br
-            input.form-control.button(type="submit", value="LOGIN", id="go")
+            input.form-control.button(type="submit", value="ACCESS EXISTING USER", id="go", href='#')

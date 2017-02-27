@@ -1,20 +1,20 @@
 body{
-  background-color: #23aa6c !important;
+  background-color: #9abff9 !important;
   padding-top: 2%;
   padding-left: 15%;
   padding-right: 15%;
-  color: #243e16;
+  color: #1854b4;
   font-family: 'Sansita', sans-serif;
 }
 
 h1{
 	font-size: 60px;
+  transition: all 0.3s;
 }
 
 h1:hover{
-  color: #344e26;
+  color: #3066c6;
 	font-size: 60px;
-  transition: all 0.1s;
 }
 
 .login-box{
@@ -34,7 +34,8 @@ form {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  color: #355723;
+  color: #006e8c;
+  font-weight: bold;
   font-size: 16px;
   border-radius: 10px;
   transition: all 0.3s;
@@ -56,7 +57,7 @@ form {
 
 .button {
     width: 259px;
-    background-color: #243e16; /* Green */
+    background-color: #1854b4;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -70,7 +71,7 @@ form {
 
 }
 .button:hover{
-  background-color: #355723;
+  background-color: #2864c4;
   transition: active 0s;
 }
 .button:active{
@@ -84,4 +85,9 @@ form {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 10px;
+}
+
+a{
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }

@@ -1,13 +1,15 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var GP_admins = require('./models/GP_admins');
 var users = require('./models/users');
 var session = require('express-session');
-var LocalStrategy = require('passport-local').Strategy;
+var dbURL = 'mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db';
+
 var app = express();
 
 
-mongoose.connect('mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db',function(err){
+mongoose.connect(dbURL,function(err){
   if (err) console.log(err);
   else console.log('Connected to DB!');
 });
@@ -20,14 +22,19 @@ app.get('/', function(req,res){
   res.render('index', { title: "ROZGAAR" });
 })
 
+app.get('/login', function(req,res){
+  res.render('login', { title: "ROZGAAR" });
+})
+
+app.get('/newUser', function(req,res){
+  res.render('newUser', { title: "ROZGAAR" });
+})
+
 app.post('/login', function(req,res){
   var username = req.body.user;
   var password = req.body.pass;
   console.log(req.body);
-})
 
-app.get('/login', function(req,res){
-  res.render('login', { title: "ROZGAAR" });
 })
 
 app.listen(3000,function(err){

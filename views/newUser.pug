@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+    h2 Welcome to Gram Panchayat Portal
+
+    div.col-md-6.col-md-offset-3.login-box
+      div
+          form(method='POST', action="/login")
+            input.form-control.button(type="submit", value="REGISTER NEW USER", id="go", href='#')
+            br
+            br
+            br
+            input.form-control.button(type="submit", value="ACCESS EXISTING USER", id="go", href='#')
+
+    section.main
+      div.wrapper-demo
+        div.wrapper-dropdown-1(id="dd" tabindex="1")
+          span Gender
+            ul.dropdown(tabindex="1")
+              li
+                a(href='#') Male
+              li
+                a(href='#') Female
+
+    script

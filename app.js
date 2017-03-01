@@ -5,7 +5,6 @@ var GP_admins = require('./models/GP_admins');
 var users = require('./models/users');
 var session = require('express-session');
 var dbURL = 'mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db';
-
 var app = express();
 
 
@@ -13,6 +12,7 @@ mongoose.connect(dbURL,function(err){
   if (err) console.log(err);
   else console.log('Connected to DB!');
 });
+
 app.set('view engine','pug');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({ secret: '123456789', resave: false, saveUninitialized: true}));
@@ -30,12 +30,17 @@ app.post('/login', function(req,res){
   var inputUsername = req.body.user;
   var inputPassword = req.body.pass;
   console.log(req.body);
-  //  FIND the document where user == inputUsername;
-  //  IF (password of that document == inputPassword)
-          res.render('index', { title: "OZGAAR" });
-  //  ELSE render error page;
+  var db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
 
-})
+  GP_admins.findOne({ 'username': inputUsername }, 'password', function (err, GP_admins) {
+    if (err) return handleError(err);
+    if(!GP_admins) res.render('errorPage', { title: "OZGAAR", error: "Username or Password incorrect!" });
+    else if(GP_admins.password == inputPassword) res.render('index', { title: "OZGAAR" });
+    else res.render('errorPage', { title: "OZGAAR", error: "Username or Password incorrect!" });
+  })
+
+  })
 
 app.post('/newUser', function(req,res){
   res.render('newUser', { title: "OZGAAR" });

@@ -13,6 +13,8 @@ mongoose.connect(dbURL,function(err){
   else console.log('Connected to DB!');
 });
 
+
+app.set('port', (process.env.PORT || 5000));
 app.set('view engine','pug');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({ secret: '123456789', resave: false, saveUninitialized: true}));
@@ -50,7 +52,7 @@ app.post('/searchUser', function(req,res){
   res.render('searchUser', { title: "OZGAAR" });
 })
 
-app.listen(3000,function(err){
+app.listen('port',function(err){
   if (err) console.log(err);
   else console.log('Server is listening!');
 });

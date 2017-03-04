@@ -27,6 +27,34 @@ h1:hover{
 	font-size: 60px;
 }
 
+.error{
+  background-color: #fff;
+  color: #e74c3c;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  -webkit-animation-name: bootyShake; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 0.4s; /* Safari 4.0 - 8.0 */
+  animation-name: bootyShake;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes bootyShake {
+    0%   {left:0px; top:0px;}
+    25%  {left:20px; top:0px;}
+    50%  {left:-20px; top:0px;}
+    75%  {left:20px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes bootyShake {
+    0%   {left:0px; top:0px;}
+    25%  {left:20px; top:0px;}
+    50%  {left:-17px; top:0px;}
+    75%  {left:14px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
 .login-box{
 	margin-top: 100px;
 }

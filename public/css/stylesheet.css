@@ -138,7 +138,6 @@ form {
   border-bottom-right-radius: 10px;
 }
 
-
 .submit-button{
   border-top-left-radius: 0px;
   border-top-right-radius: 10px;
@@ -150,3 +149,5 @@ a{
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
+
+#webcam { width: 259px; height: 259px; background: black; }

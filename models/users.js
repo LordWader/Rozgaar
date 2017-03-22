@@ -2,13 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var WorkerSchema = new Schema({
-  jobcard_no: Number,
-  family_id: Number,
+  jobNo: Number,
   adhar_no: Array,
   mobile: Array,
   name: Array,
 })
 
-var Worker = mongoose.model('Worker', WorkerSchema);
+var User = mongoose.model('User', WorkerSchema);
 
-module.exports = Worker;
+module.exports = User;

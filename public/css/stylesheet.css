@@ -203,8 +203,10 @@ form {
 }
 
 .workerinfo{
+  color: #1a3f79;
   padding-left: 50px;
 }
+
 a{
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */

@@ -182,6 +182,7 @@ form {
 }
 
 .big{
+  margin-top: 40px;
   width: 60%;
 }
 
@@ -201,6 +202,9 @@ form {
   float: right;
 }
 
+.workerinfo{
+  padding-left: 50px;
+}
 a{
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */

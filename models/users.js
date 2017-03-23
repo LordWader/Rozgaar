@@ -6,6 +6,7 @@ var WorkerSchema = new Schema({
   adhar_no: Array,
   mobile: Array,
   name: Array,
+  grampanchayat: String
 })
 
 var User = mongoose.model('User', WorkerSchema);

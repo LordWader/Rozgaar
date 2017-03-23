@@ -43,6 +43,9 @@ app.post('/login', function(req,res){
 
 })
 
+app.post('/home', function(req,res){
+  res.render('index', { title: "OZGAAR" });
+})
 
 app.post('/search', function(req,res){
     var inputUsername = req.body.jobNo;
@@ -50,11 +53,26 @@ app.post('/search', function(req,res){
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
 
-    Users.findOne({ 'jobNo': inputUsername }, ['name','mobile'], function (err, users) {
+    Users.findOne({ 'jobNo': inputUsername }, ['name','mobile','grampanchayat','adhar_no','jobNo'], function (err, users) {
       if (err) return handleError(err);
       if(!users) res.render('errorPage', { title: "OZGAAR", error: "ERROR: Incorrect JOBCARD NUMBER entered!" });
-      else console.log(users);
-      res.render('errorPage', { title: "OZGAAR", error: "This is "+users.name[0]+"'s Jobcard" });
+      else {
+        console.log(users);
+        res.render('worker', {
+          title: "OZGAAR",
+          jobNo: users.jobNo,
+          name0: users.name[0],
+          name1: users.name[1],
+          name2: users.name[2],
+          num0: users.mobile[0],
+          num1: users.mobile[1],
+          num2: users.mobile[2],
+          adhar0: users.adhar_no[0],
+          adhar1: users.adhar_no[1],
+          adhar2: users.adhar_no[2],
+          gp: users.grampanchayat
+        });
+      };
     })
 
   })

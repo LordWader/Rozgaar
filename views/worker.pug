@@ -1,0 +1,41 @@
+extends layout-login.pug
+
+block content
+  div.row
+    div.box.big
+      div.boxtitle
+        h2 JOBCARD:
+      br
+      h2= jobNo
+    div.col-md-6.left
+      br
+      div.box
+        div.boxtitle
+          h2 Family Members:
+        br
+        h2= name0
+        h2= name1
+        h2= name2
+      br
+      div.box
+        div.boxtitle
+          h2 Contact Numbers:
+        br
+        h2= num0
+        h2= num1
+        h2= num2
+      br
+    div.col-md-6.right
+      div.box
+        div.boxtitle
+          h2 Adhaar Card Numbers:
+        br
+        h2= adhar0
+        h2= adhar1
+        h2= adhar2
+      br
+      div.box
+        div.boxtitle
+          h2 Gram Panchayat:
+        br
+        h2= gp

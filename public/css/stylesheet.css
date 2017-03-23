@@ -1,31 +1,48 @@
 body{
   background-color: #9abff9 !important;
-  margin-top: 0px;
-  padding-left: 15%;
-  padding-right: 15%;
+  margin: 0px;
+  padding: 0px;
   color: #1854b4;
   font-family: 'Sansita', sans-serif;
 }
 
-.floating{
-  float: left;
+.header{
+  padding: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin: 0px;
+  background-color: #7a9fd9
+}
+
+.container{
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .logo{
-  height: 72px;
+  height: 60px;
   width: auto;
 }
 
 h1{
-	font-size: 60px;
-  margin-top: 6px;
+	font-size: 44px;
+  margin-top: 0px;
   margin-bottom: 0px;
   transition: all 0.3s;
 }
 
 h1:hover{
   color: #3066c6;
-	font-size: 60px;
+}
+
+h2{
+  font-size: 20px;
+  margin: 0px;
+}
+
+.subtitle{
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 .error{
@@ -126,8 +143,11 @@ form {
 }
 .list-button{
   margin: 0px;
-  padding: 3px;
+  padding: 10px;
   border-radius: 0px;
+}
+.list-button:hover{
+  font-size: 25px;
 }
 .list-first{
   border-top-left-radius: 10px;
@@ -143,6 +163,42 @@ form {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 10px;
+}
+
+.header-button{
+  width: 200px;
+}
+
+.box{
+  width: 360px;
+  padding: 20px;
+  padding-top: 5px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 10px;
+  background-color: #6a8fc9;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+}
+
+.big{
+  width: 60%;
+}
+
+.boxtitle{
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  background-color: #3a5f99;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  margin-top: 18px;
+  float: right;
 }
 
 a{

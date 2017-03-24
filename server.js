@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var GP_admins = require('./models/GP_admins');
 var Users = require('./models/users');
 var session = require('express-session');
+var LiveCam = require('livecam');
+
 var dbURL = 'mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db';
 var app = express();
 var adhaarNav = require('./navigation/adhaar')
@@ -12,6 +14,12 @@ var adhaarNav = require('./navigation/adhaar')
 mongoose.connect(dbURL,function(err){
   if (err) console.log(err);
   else console.log('Connected to DB!');
+});
+
+const webcam_server = new LiveCam({
+    'start' : function() {
+        console.log('WebCam server started!');
+    }
 });
 
 app.set('view engine','pug');
@@ -53,7 +61,7 @@ app.post('/search', function(req,res){
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
 
-    Users.findOne({ 'jobNo': inputUsername }, ['name','mobile','grampanchayat','adhar_no','jobNo'], function (err, users) {
+    Users.findOne({ 'jobNo': inputUsername }, ['name','mobile','grampanchayat','adhar_no','jobNo','img'], function (err, users) {
       if (err) return handleError(err);
       if(!users) res.render('errorPage', { title: "OZGAAR", error: "ERROR: Incorrect JOBCARD NUMBER entered!" });
       else {
@@ -61,6 +69,9 @@ app.post('/search', function(req,res){
         res.render('worker', {
           title: "OZGAAR",
           jobNo: users.jobNo,
+          img0: users.img[0],
+          img1: users.img[1],
+          img2: users.img[2],
           name0: users.name[0],
           name1: users.name[1],
           name2: users.name[2],
@@ -85,13 +96,15 @@ app.post('/adhaar1', function(req,res){
   res.render('adhaar/1', { title: "OZGAAR" });
 })
 
-app.post('/adhaar12', function(req,res){
+app.post('/adhaar2', function(req,res){
   res.render('adhaar/2', { title: "OZGAAR" });
 })
 
 app.post('/searchUser', function(req,res){
   res.render('searchUser', { title: "OZGAAR" });
 })
+
+webcam_server.broadcast();
 
 app.listen((process.env.PORT || 5000),function(err){
   if (err) console.log(err);

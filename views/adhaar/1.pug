@@ -6,3 +6,6 @@ block content
           h2 Scan the QR code of ADHAAR CARD
           br
           div#webcam
+          br
+        form(method='POST', action="/scan")
+          input.form-control.button(type="submit", value="SCAN", id="go")

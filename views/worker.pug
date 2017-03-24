@@ -2,12 +2,14 @@ extends layout-login.pug
 
 block content
   div.row
-    div.box.big
-      div.boxtitle
-        h2 JOBCARD Number:
-      br
-      h2.workerinfo= jobNo
+
+
     div.col-md-6.left
+      div.box
+        div.boxtitle
+          h2 JOBCARD Number:
+        br
+        h2.workerinfo= jobNo
       br
       div.box
         div.boxtitle
@@ -25,7 +27,17 @@ block content
         h2.workerinfo= num1
         h2.workerinfo= num2
       br
+
+
     div.col-md-6.right
+      div.box
+        div.boxtitle
+          h2 Family Photo:
+        br
+        img(src= 'https://docs.google.com/uc?id=0By5xPUOmt3GpRXdVQkVOMFhvbGs', height='50px', width='auto', margin='0px', padding='0px')
+        img(src= 'https://docs.google.com/uc?id=0By5xPUOmt3GpRXdVQkVOMFhvbGs', height='50px', width='auto', margin='0px', padding='0px')
+        img(src= 'https://docs.google.com/uc?id=0By5xPUOmt3GpRXdVQkVOMFhvbGs', height='50px', width='auto', margin='0px', padding='0px')
+      br
       div.box
         div.boxtitle
           h2 ADHAAR CARD Numbers:

@@ -7,6 +7,7 @@ body{
 }
 
 .header{
+  height: 60px;
   padding: 10px;
   padding-left: 15%;
   padding-right: 15%;
@@ -198,7 +199,6 @@ form {
 }
 
 .right{
-  margin-top: 18px;
   float: right;
 }
 

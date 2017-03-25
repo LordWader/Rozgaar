@@ -5,8 +5,8 @@ block content
         form(method='POST', action="")
           h2 Scan the QR code of ADHAAR CARD
           br
-          div#qr-canvas(name= 'qr')
-            video#qr-canvas#video(autoplay='true')
+          div(name= 'qr')
+            video#video(autoplay='true')
           br
         form(method='POST', action="/scan")
           input.form-control.button(type="submit", value="SCAN", id="go")

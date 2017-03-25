@@ -1,17 +1,15 @@
 html
   head
     title Rozgaar
-    //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', href='static/css/stylesheet.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans|Sansita')
   body
    div.header
-    img.logo.left(src="/static/img/icon")
-    h1= title
+    img.logo(src="/static/img/icon")
+    h1.logo= title
    br
    div.container
     block content
 
 script(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 script(href='https://code.jquery.com/jquery-3.1.1.min.js')
-script(href='static/js/script.js')

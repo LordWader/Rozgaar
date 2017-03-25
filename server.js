@@ -1,25 +1,21 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var QrCode = require('qrcode-reader');
+
 var GP_admins = require('./models/GP_admins');
 var Users = require('./models/users');
-var session = require('express-session');
-var LiveCam = require('livecam');
+var adhaarNav = require('./navigation/adhaar')
 
 var dbURL = 'mongodb://dbroot:mitron@ds137759.mlab.com:37759/rozgaar_db';
 var app = express();
-var adhaarNav = require('./navigation/adhaar')
+var qr = new QrCode();
 
 
 mongoose.connect(dbURL,function(err){
   if (err) console.log(err);
   else console.log('Connected to DB!');
-});
-
-const webcam_server = new LiveCam({
-    'start' : function() {
-        console.log('WebCam server started!');
-    }
 });
 
 app.set('view engine','pug');
@@ -94,6 +90,9 @@ app.post('/newUser', function(req,res){
 
 app.post('/adhaar1', function(req,res){
   res.render('adhaar/1', { title: "OZGAAR" });
+  var context = req.body.qr;
+  var data = context.getImageData(0, 0, width, height);
+  qr.decode(data);
 })
 
 app.post('/adhaar2', function(req,res){
@@ -103,8 +102,6 @@ app.post('/adhaar2', function(req,res){
 app.post('/searchUser', function(req,res){
   res.render('searchUser', { title: "OZGAAR" });
 })
-
-webcam_server.broadcast();
 
 app.listen((process.env.PORT || 5000),function(err){
   if (err) console.log(err);

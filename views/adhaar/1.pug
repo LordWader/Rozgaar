@@ -5,7 +5,12 @@ block content
         form(method='POST', action="")
           h2 Scan the QR code of ADHAAR CARD
           br
-          div#webcam
+          div#qr-canvas(name= 'qr')
+            video#video(autoplay='true')
           br
         form(method='POST', action="/scan")
           input.form-control.button(type="submit", value="SCAN", id="go")
+
+
+      script(href='static/js/qcode-decoder.js')
+      script(href='static/js/script.js')

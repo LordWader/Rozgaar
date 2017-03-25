@@ -6,8 +6,8 @@ html
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans|Sansita')
   body
    div.header
-    img.logo.left(src="/static/img/icon")
-    h1.left= title
+    img.logo(src="/static/img/icon")
+    h1.logo= title
     div
       form.right(method='POST', action="/searchUser")
         input.form-control.button.header-button(type="submit", value="Workers", id="go", href='#')

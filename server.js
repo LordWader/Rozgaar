@@ -90,9 +90,11 @@ app.post('/newUser', function(req,res){
 
 app.post('/adhaar1', function(req,res){
   res.render('adhaar/1', { title: "OZGAAR" });
-  var context = req.body.qr;
-  var data = context.getImageData(0, 0, width, height);
-  qr.decode(data);
+  setTimeout(function (){
+        var context = req.body.videoElement;
+        var data = context.getImageData(375, 375, width, height);
+        qr.decode(data);
+    }, 5000);
 })
 
 app.post('/adhaar2', function(req,res){

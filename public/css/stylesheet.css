@@ -217,4 +217,12 @@ a{
   text-decoration: inherit; /* no underline */
 }
 
-#video{ width: 259px; height: 259px; background: black; }
+#qr{
+    width: 375px;
+}
+
+#videoElement {
+    width: 375px;
+    height: 375px;
+    background-color: #666;
+}

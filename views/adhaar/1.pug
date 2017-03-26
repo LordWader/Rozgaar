@@ -1,16 +1,15 @@
-extends ../layout.pug
+extends ../layout-login.pug
 
 block content
       div
-        form(method='POST', action="")
+        form#qr(method='POST', action="")
           h2 Scan the QR code of ADHAAR CARD
           br
-          div(name= 'qr')
-            video#video(autoplay='true')
+          div
+            video(autoplay="true" id="videoElement")
           br
         form(method='POST', action="/scan")
           input.form-control.button(type="submit", value="SCAN", id="go")
 
-
-      script(href='static/js/qcode-decoder.js')
-      script(href='static/js/script.js')
+      script
+        include ../../public/js/webcam.js

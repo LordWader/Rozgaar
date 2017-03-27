@@ -9,13 +9,14 @@ block content
         video(autoplay="true" id="videoElement")
       br
     form(method='POST', action="/search")
-      h2.workerinfo OR
+      h2.text-center OR
       br
       input.form-control.text-field(name="jobNo", type="text", placeholder="Enter JOBCARD NUMBER")
       br
       br
       input.form-control.button(type="submit", value="SEARCH USER", id="go")
 
-
+      script
+        include ../public/js/qrcode-decoder.js
       script
         include ../public/js/webcam.js

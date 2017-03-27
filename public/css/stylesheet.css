@@ -5,6 +5,9 @@ body{
   color: #1854b4;
   font-family: 'Sansita', sans-serif;
 }
+.text-center{
+  text-align: center;
+}
 
 .header{
   height: 60px;

@@ -2,14 +2,25 @@ extends ../layout-login.pug
 
 block content
       div
-        form#qr(method='POST', action="")
           h2 Scan the QR code of ADHAAR CARD
           br
           div
             video#videoElement(autoplay="true")
           br
-        form(method='POST', action="/scan")
-          input.form-control.button(type="submit", value="SCAN", id="go")
+          input(id='scanBtn' type='button' onclick="bridgeit.scan('scanBtn', 'onAfterCaptureScan');" value="Scan")
 
       script
         include ../../public/js/webcam.js
+
+      script
+        include ../../public/js/jsqrcode-combined.min.js
+
+      script.
+        function onAfterCaptureScan(event)  {
+          var text = event.value;
+          var scans = document.getElementById("scans");
+          var row1 = document.createElement('div');
+          row1.setAttribute('class','row');
+          row1.innerHTML = text;
+          scans.insertBefore(row1, scans.firstChild);
+        }

@@ -84,14 +84,14 @@ app.post('/search', function(req,res){
 
   })
 
+
+
 app.post('/newUser', function(req,res){
   res.render('newUser', { title: "OZGAAR" });
 })
 
 app.post('/adhaar1', function(req,res){
   res.render('adhaar/1', { title: "OZGAAR" });
-  setTimeout(function (){
-    }, 5000);
 })
 
 app.post('/adhaar2', function(req,res){

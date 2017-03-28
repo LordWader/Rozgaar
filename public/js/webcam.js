@@ -1,3 +1,4 @@
+
 var video = document.querySelector("#videoElement");
 
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
@@ -10,4 +11,6 @@ function handleVideo(stream) {
    video.src = window.URL.createObjectURL(stream);
 }
 
-qrcode.decode(video)
+function videoError(e) {
+   // do something
+}

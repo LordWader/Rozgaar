@@ -6,7 +6,7 @@ block content
           h2 Scan the QR code of ADHAAR CARD
           br
           div
-            video(autoplay="true" id="videoElement")
+            video#videoElement(autoplay="true")
           br
         form(method='POST', action="/scan")
           input.form-control.button(type="submit", value="SCAN", id="go")

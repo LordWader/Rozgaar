@@ -220,12 +220,8 @@ a{
   text-decoration: inherit; /* no underline */
 }
 
-#qr{
-    width: 375px;
-}
-
 #videoElement {
     width: 375px;
     height: 375px;
-    background-color: #666;
+    background-color: #7a9fd9;
 }

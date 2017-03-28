@@ -2,25 +2,47 @@ extends ../layout-login.pug
 
 block content
       div
+        form#qr(method='POST', action="")
           h2 Scan the QR code of ADHAAR CARD
           br
           div
             video#videoElement(autoplay="true")
           br
-          input(id='scanBtn' type='button' onclick="bridgeit.scan('scanBtn', 'onAfterCaptureScan');" value="Scan")
+        button#capture Scan
 
-      script
-        include ../../public/js/webcam.js
-
-      script
-        include ../../public/js/jsqrcode-combined.min.js
-
-      script.
-        function onAfterCaptureScan(event)  {
-          var text = event.value;
-          var scans = document.getElementById("scans");
-          var row1 = document.createElement('div');
-          row1.setAttribute('class','row');
-          row1.innerHTML = text;
-          scans.insertBefore(row1, scans.firstChild);
-        }
+          script
+            include ../../public/js/grid.js
+          script
+            include ../../public/js/version.js
+          script
+            include ../../public/js/detector.js
+          script
+            include ../../public/js/formatinf.js
+          script
+            include ../../public/js/errorlevel.js
+          script
+            include ../../public/js/bitmat.js
+          script
+            include ../../public/js/datablock.js
+          script
+            include ../../public/js/bmparser.js
+          script
+            include ../../public/js/datamask.js
+          script
+            include ../../public/js/rsdecoder.js
+          script
+            include ../../public/js/gf256poly.js
+          script
+            include ../../public/js/gf256.js
+          script
+            include ../../public/js/decoder.js
+          script
+            include ../../public/js/qrcode.js
+          script
+            include ../../public/js/findpat.js
+          script
+            include ../../public/js/alignpat.js
+          script
+            include ../../public/js/databr.js
+          script
+            include ../../public/js/webcam.js

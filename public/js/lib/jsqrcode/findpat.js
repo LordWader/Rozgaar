@@ -399,48 +399,27 @@ function FinderPatternFinder()
 			{
 				// But we can only afford to do so if we have at least 4 possibilities to choose from
 				var totalModuleSize = 0.0;
-                var square = 0.0;
 				for (var i = 0; i < startSize; i++)
 				{
-					//totalModuleSize +=  this.possibleCenters[i].EstimatedModuleSize;
-                    var	centerValue=this.possibleCenters[i].EstimatedModuleSize;
-					totalModuleSize += centerValue;
-					square += (centerValue * centerValue);
+					totalModuleSize +=  this.possibleCenters[i].EstimatedModuleSize;
 				}
 				var average = totalModuleSize /  startSize;
-                this.possibleCenters.sort(function(center1,center2) {
-				      var dA=Math.abs(center2.EstimatedModuleSize - average);
-				      var dB=Math.abs(center1.EstimatedModuleSize - average);
-				      if (dA < dB) {
-				    	  return (-1);
-				      } else if (dA == dB) {
-				    	  return 0;
-				      } else {
-				    	  return 1;
-				      }
-					});
-
-				var stdDev = Math.sqrt(square / startSize - average * average);
-				var limit = Math.max(0.2 * average, stdDev);
-				for (var i = this.possibleCenters.length - 1; i >= 0 ; i--)
+				for (var i = 0; i < this.possibleCenters.length && this.possibleCenters.length > 3; i++)
 				{
 					var pattern =  this.possibleCenters[i];
-					//if (Math.abs(pattern.EstimatedModuleSize - average) > 0.2 * average)
-                    if (Math.abs(pattern.EstimatedModuleSize - average) > limit)
+					if (Math.abs(pattern.EstimatedModuleSize - average) > 0.2 * average)
 					{
 						this.possibleCenters.remove(i);
+						i--;
 					}
 				}
 			}
 			
-			if (this.possibleCenters.length > 3)
+			if (this.possibleCenters.Count > 3)
 			{
 				// Throw away all but those first size candidate points we found.
-				this.possibleCenters.sort(function(a, b){
-					if (a.count > b.count){return -1;}
-					if (a.count < b.count){return 1;}
-					return 0;
-				});
+				//Collections.insertionSort(possibleCenters, new CenterComparator());
+				//SupportClass.SetCapacity(possibleCenters, 3);
 			}
 			
 			return new Array( this.possibleCenters[0],  this.possibleCenters[1],  this.possibleCenters[2]);

@@ -48,11 +48,34 @@ block content
         include ../../public/js/init.js
 
       div
-        form(method='POST', action="")
+        div.left
           h2 Scan the QR code of ADHAAR CARD
           br
           div
             video#camsource(autoplay width="320" height="240")
             canvas#qr-canvas(width="320" height="240" style="display:none")
           br
-          h2#qr-value
+          input.form-control.button(type="submit", value="SCAN Adhaar", id="scan1", href='#')
+          input.form-control.button(type="submit", value="SCAN JOBCARD", id="scan2", href='#', style="display:none")
+        form.right(method='POST', action="/createUser")
+          input.form-control.text-field(id="name", name="name", type="text", placeholder="Full Name", width="100%", disabled)
+          br
+          br
+          input.form-control.text-field(id="adhaarNo", name="adhaarNo", type="text", placeholder="ADHAAR CARD number", disabled)
+          br
+          br
+          input.form-control.text-field(id="gp", name="gp", type="text", placeholder="Gram Panchayat", width="100%", disabled)
+          br
+          br
+          input.form-control.text-field(id="JobNo", name="JobNo", type="text", placeholder="JOBCARD Number", width="100%", disabled)
+          br
+          br
+          input.form-control.text-field(name="mobile", type="text", placeholder="ENTER Mobile Number", width="100%")
+          br
+          br
+          br
+          input.form-control.button.disabled(type="submit", value="PROCEED", id="proceed", href='#', disabled)
+
+
+      script
+        include ../../public/js/script.js

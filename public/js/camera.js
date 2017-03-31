@@ -31,7 +31,6 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
 	    catch(err) { $("#qr-value").text(err); }
 			if(qrcode.result){
 				console.log(qrcode.result);
-				var data = Number(qrcode.result);
 				var textField = $('#result');
 				var button = $('#searchButton');
 				button.removeClass("disabled");

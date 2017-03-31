@@ -1,48 +1,58 @@
 extends ../layout-login.pug
 
 block content
+
+      script
+        include ../../public/js/lib/jquery-1.7.2.min.js
+
+      script
+        include ../../public/js/lib/jsqrcode/grid.js
+      script
+        include ../../public/js/lib/jsqrcode/version.js
+      script
+        include ../../public/js/lib/jsqrcode/detector.js
+      script
+        include ../../public/js/lib/jsqrcode/formatinf.js
+      script
+        include ../../public/js/lib/jsqrcode/errorlevel.js
+      script
+        include ../../public/js/lib/jsqrcode/bitmat.js
+      script
+        include ../../public/js/lib/jsqrcode/datablock.js
+      script
+        include ../../public/js/lib/jsqrcode/bmparser.js
+      script
+        include ../../public/js/lib/jsqrcode/datamask.js
+      script
+        include ../../public/js/lib/jsqrcode/rsdecoder.js
+      script
+        include ../../public/js/lib/jsqrcode/gf256poly.js
+      script
+        include ../../public/js/lib/jsqrcode/gf256.js
+      script
+        include ../../public/js/lib/jsqrcode/decoder.js
+      script
+        include ../../public/js/lib/jsqrcode/QRCode.js
+      script
+        include ../../public/js/lib/jsqrcode/findpat.js
+      script
+        include ../../public/js/lib/jsqrcode/alignpat.js
+      script
+        include ../../public/js/lib/jsqrcode/databr.js
+
+      script
+        include ../../public/js/qr.js
+      script
+        include ../../public/js/camera.js
+      script
+        include ../../public/js/init.js
+
       div
-        form#qr(method='POST', action="")
+        form(method='POST', action="")
           h2 Scan the QR code of ADHAAR CARD
           br
           div
-            video#videoElement(autoplay="true")
+            video#camsource(autoplay width="320" height="240")
+            canvas#qr-canvas(width="320" height="240" style="display:none")
           br
-        button#capture Scan
-
-          script
-            include ../../public/js/grid.js
-          script
-            include ../../public/js/version.js
-          script
-            include ../../public/js/detector.js
-          script
-            include ../../public/js/formatinf.js
-          script
-            include ../../public/js/errorlevel.js
-          script
-            include ../../public/js/bitmat.js
-          script
-            include ../../public/js/datablock.js
-          script
-            include ../../public/js/bmparser.js
-          script
-            include ../../public/js/datamask.js
-          script
-            include ../../public/js/rsdecoder.js
-          script
-            include ../../public/js/gf256poly.js
-          script
-            include ../../public/js/gf256.js
-          script
-            include ../../public/js/decoder.js
-          script
-            include ../../public/js/qrcode.js
-          script
-            include ../../public/js/findpat.js
-          script
-            include ../../public/js/alignpat.js
-          script
-            include ../../public/js/databr.js
-          script
-            include ../../public/js/webcam.js
+          h2#qr-value

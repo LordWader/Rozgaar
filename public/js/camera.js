@@ -29,8 +29,17 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
 	        qr_can.drawImage(video, 0, 0, w, h);
 	    try        { qrcode.decode();  }
 	    catch(err) { $("#qr-value").text(err); }
+			if(qrcode.result){
+				console.log(qrcode.result);
+				var data = Number(qrcode.result);
+				var textField = $('#result');
+				var button = $('#searchButton');
+				button.removeClass("disabled");
+				button.prop( "disabled", false );
+    		textField.val(qrcode.result);
+			}
 		// console.timeEnd('capture');
-	} 
+	}
 
 	return {
 		interval:interval,

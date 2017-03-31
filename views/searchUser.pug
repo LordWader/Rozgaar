@@ -1,20 +1,59 @@
 extends layout-login.pug
 
 block content
-    h2.subtitle Search MNREGA Worker
-    form#qr(method='POST', action="")
-      h2 Scan the QR code of JOBCARD
-      br
-      div
-        video(autoplay="true" id="videoElement")
-      br
-    form(method='POST', action="/search")
-      h2.text-center OR
-      br
-      input.form-control.text-field(name="jobNo", type="text", placeholder="Enter JOBCARD NUMBER")
-      br
-      br
-      input.form-control.button(type="submit", value="SEARCH USER", id="go")
 
       script
-        include ../public/js/webcam.js
+        include ../public/js/lib/jquery-1.7.2.min.js
+
+      script
+        include ../public/js/lib/jsqrcode/grid.js
+      script
+        include ../public/js/lib/jsqrcode/version.js
+      script
+        include ../public/js/lib/jsqrcode/detector.js
+      script
+        include ../public/js/lib/jsqrcode/formatinf.js
+      script
+        include ../public/js/lib/jsqrcode/errorlevel.js
+      script
+        include ../public/js/lib/jsqrcode/bitmat.js
+      script
+        include ../public/js/lib/jsqrcode/datablock.js
+      script
+        include ../public/js/lib/jsqrcode/bmparser.js
+      script
+        include ../public/js/lib/jsqrcode/datamask.js
+      script
+        include ../public/js/lib/jsqrcode/rsdecoder.js
+      script
+        include ../public/js/lib/jsqrcode/gf256poly.js
+      script
+        include ../public/js/lib/jsqrcode/gf256.js
+      script
+        include ../public/js/lib/jsqrcode/decoder.js
+      script
+        include ../public/js/lib/jsqrcode/QRCode.js
+      script
+        include ../public/js/lib/jsqrcode/findpat.js
+      script
+        include ../public/js/lib/jsqrcode/alignpat.js
+      script
+        include ../public/js/lib/jsqrcode/databr.js
+
+      script
+        include ../public/js/qr.js
+      script
+        include ../public/js/camera.js
+      script
+        include ../public/js/init.js
+
+      div
+        form(method='POST', action="/search")
+          h2 Scan the QR code of JOBCARD
+          br
+          div
+            video#camsource(autoplay width="320" height="240")
+            canvas#qr-canvas(width="320" height="240" style="display:none")
+          br
+          input.form-control.text-field(id="result", name="jobNo" type="text", placeholder="JOBCARD Number"  style="display:none")
+          input.form-control.button.disabled(type="submit", value="PROCEED", id="searchButton", href='#' disabled)

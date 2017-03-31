@@ -142,6 +142,21 @@ form {
   box-shadow: inset 0px 0px 43px -12px rgba(26,38,25,1);
 }
 
+.disabled{
+  background-color: #888;
+  color: #333;
+}
+
+.disabled:hover{
+  background-color: #aaa;
+}
+
+.button:active{
+  -webkit-box-shadow: inset 0px 0px 0px 0px rgba(26,38,25,1);
+  -moz-box-shadow: inset 0px 0px 0px 0px rgba(26,38,25,1);
+  box-shadow: inset 0px 0px 0px 0px rgba(26,38,25,1);
+}
+
 .list-form{
   margin: 0px;
   padding: 0px;
